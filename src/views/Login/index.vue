@@ -1,6 +1,6 @@
 <template>
   <div>
-    <van-nav-bar title="登录">
+    <van-nav-bar title="登录" @click-left="$router.go(-1)">
       <van-icon name="cross" slot="left" />
     </van-nav-bar>
     <van-form @submit="onSubmit" ref="form">
@@ -56,7 +56,7 @@ export default {
   created () { },
   data () {
     return {
-      mobile: '13911111111', // 手机号
+      mobile: '18179312838', // 手机号
       code: '246810', // 短信验证码
       time: 5 * 1000,
       isCountDownShow: false
