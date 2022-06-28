@@ -12,7 +12,7 @@
           { required: true, message: '请输入手机号' },
           { pattern: /^(?:(?:\+|00)86)?1[3-9]\d{9}$/, message: '手机格式不对' },
         ]"
-        ><MyIcon name='shouji' slot="left-icon"></MyIcon>
+        ><MyIcon name="shouji" slot="left-icon"></MyIcon>
       </van-field>
       <van-field
         v-model="code"
@@ -23,7 +23,7 @@
           { required: true, message: '请填写验证码' },
           { pattern: /^\d{6}$/, message: '验证码长度必须6位' },
         ]"
-        ><MyIcon name='yanzhengma' slot="left-icon"></MyIcon>
+        ><MyIcon name="yanzhengma" slot="left-icon"></MyIcon>
         <template #button>
           <van-count-down
             v-if="isCountDownShow"
@@ -70,6 +70,7 @@ export default {
         const res = await login(values)
         console.log(res)
         this.$store.commit('setUser', res.data.data)
+        this.$router.push({ name: 'my' })
       } catch (err) {
         console.log(err)
       }
